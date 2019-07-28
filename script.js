@@ -148,4 +148,24 @@ $(document).ready(function() {
       return origValue + "/jquery/";
     });
   });
+
+  // Add elements
+  // Can add to start and end of elements
+
+  $("p").append("Some appendted text."); // adds content to END of html elements
+  $("p").prepend("Some appendted text."); // adds content to BEGINNING  of html elements
+
+  // can add before and after elements
+  $("img").after("Some text after");
+  $("img").before("Some text after");
+
+  // Can add multiple items at once
+  function appendText() {
+    let txt1 = "<p>Text.</p>"; // Create element with HTML
+    let txt2 = $("<p></p>").text("Text."); // Create with jQuery
+    let txt3 = document.createElement("p"); // Create with DOM
+    txt3.innerHTML = "Text.";
+    $("body").append(txt1, txt2, txt3); // Append the new elements
+    $("img").after(txt1, txt2, txt3); // Insert new elements after <img>
+  }
 });
