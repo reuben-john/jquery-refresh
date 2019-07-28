@@ -198,4 +198,33 @@ $(document).ready(function() {
   $("p").css("background-color"); // returns current background color
   $("p").css("background-color", "green"); // sets background color to green
   $("p").css({ "background-color": "green", "font-size": "200%" }); // set multiple properties at once
+
+  // Dimension methods
+  $("p").width(); // sets or returns width of element (excludes padding, border and margin)
+  $("p").height(); // sets or returns height of element (excludes padding, border and margin)
+  $("p").innerWidth(); // sets or returns width of element (includes padding)
+  $("p").innerHeight(); // sets or returns height of element (includes padding)
+  $("p").outerWidth(); // sets or returns width of element (includes padding and border)
+  $("p").outerHeight(); // sets or returns height of element (includes padding and border)
+  $("p").outerWidth(true); // sets or returns width of element (includes padding, border, and margin)
+  $("p").outerHeight(true); // sets or returns height of element (includes padding, border, and margin)
+
+  $("button").click(function() {
+    var txt = "";
+    txt += "Width: " + $("#div1").width() + "</br>";
+    txt += "Height: " + $("#div1").height();
+    txt += "Inner width: " + $("#div1").innerWidth() + "</br>";
+    txt += "Inner height: " + $("#div1").innerHeight();
+    txt += "Outer width: " + $("#div1").outerWidth() + "</br>";
+    txt += "Outer height: " + $("#div1").outerHeight();
+    txt += "Outer width (+margin): " + $("#div1").outerWidth(true) + "</br>";
+    txt += "Outer height (+margin): " + $("#div1").outerHeight(true);
+    $("#div1").html(txt);
+  });
+
+  $("button").click(function() {
+    $("#div1")
+      .width(500)
+      .height(500);
+  });
 });
