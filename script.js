@@ -244,4 +244,14 @@ $(document).ready(function() {
   $("div").children("p.first"); // returns all p elements with class="first" that are direct children of div
   $("div").find("span"); // returns all span elements that are descendents of div
   $("div").find("*"); // returns all descendents of div
+
+  // Traversing Sideways in the DOM Tree
+  $("h2").siblings(); // returns all sibling elements of h2
+  $("h2").siblings("p"); // returns all sibling elements of h2 that are p element
+  $("h2").next(); // returns next sibling element of h2 (top to bottom)
+  $("h2").nextAll(); // returns all next sibling element of h2 (top to bottom)
+  $("h2").nextUntil("h6"); // returns all sibling elements between h2 and h6
+  $("h2").prev(); // returns prev sibling element of h2 (top to bottom)
+  $("h2").prevAll(); // returns all prev sibling element of h2 (top to bottom)
+  $("h2").prevUntil("h6"); // returns all sibling elements between h6 and h2
 });
