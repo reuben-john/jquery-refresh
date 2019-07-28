@@ -192,4 +192,10 @@ $(document).ready(function() {
     // toggle class on and off
     $("h1, h2, p").toggleClass("blue");
   });
+
+  // CSS property
+  // css sets or returns the css property
+  $("p").css("background-color"); // returns current background color
+  $("p").css("background-color", "green"); // sets background color to green
+  $("p").css({ "background-color": "green", "font-size": "200%" }); // set multiple properties at once
 });
