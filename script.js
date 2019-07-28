@@ -262,4 +262,34 @@ $(document).ready(function() {
   $("div").eq(1); // returns div element with specific index number
   $("p").filter(".intro"); // returns all p elemens that match class="intro"
   $("p").not(".intro"); // returns all p elemens that do not match class="intro"
+
+  // AJAX -  Asynchronous JavaScript and XML
+  // Fetch data from server, then render it into web page without a refresh
+  // uses javascript to display content
+
+  // load()
+  // loads data from another location and adds it to the element
+  // $(selector).load(URL,data,callback);
+  // The required URL parameter specifies the URL you wish to load.
+  // The optional data parameter specifies a set of querystring key/value pairs to send along with the request.
+  // The optional callback parameter is the name of a function to be executed after the load() method is completed.
+
+  $("#div1").load("demo_text.txt"); // loads content of txt into div1
+  $("#div1").load("demo_text.txt #p1"); // loads content matching #p1 from txt into div1
+
+  // callback can have different parameters
+  // responseTxt - contains the resulting content if the call succeeds
+  // statusTxt - contains the status of the call
+  // xhr - contains the XMLHttpRequest object
+
+  $("button").click(function() {
+    $("#div1").load("demo_text.txt", function(responseTxt, statusTxt, xhr) {
+      if (statusTxt == "success") {
+        alert("External content loaded successfully!");
+      }
+      if (statusTxt == "error") {
+        alert("Error: " + xhr.status + ": " + xhr.statusText);
+      }
+    });
+  });
 });
