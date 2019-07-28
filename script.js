@@ -168,4 +168,13 @@ $(document).ready(function() {
     $("body").append(txt1, txt2, txt3); // Append the new elements
     $("img").after(txt1, txt2, txt3); // Insert new elements after <img>
   }
+
+  // Remove elements and content
+
+  $("div1").remove(); // remove selected element and child elements
+  $("div2").empty(); // remove child elements of selected element
+
+  // remove allows for filtering elements to remove
+  $("p").remove(".test"); // remove all <p> elements with class="test"
+  $("p").remove(".test", ".demo"); // remove all <p> elements with class="test" or class="demo"
 });
