@@ -177,4 +177,6 @@ $(document).ready(function() {
   // remove allows for filtering elements to remove
   $("p").remove(".test"); // remove all <p> elements with class="test"
   $("p").remove(".test", ".demo"); // remove all <p> elements with class="test" or class="demo"
+
+  // Manipulating CSS
 });
