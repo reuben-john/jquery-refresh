@@ -254,4 +254,12 @@ $(document).ready(function() {
   $("h2").prev(); // returns prev sibling element of h2 (top to bottom)
   $("h2").prevAll(); // returns all prev sibling element of h2 (top to bottom)
   $("h2").prevUntil("h6"); // returns all sibling elements between h6 and h2
+
+  // Filtering
+
+  $("div").first(); // returns first div element
+  $("div").last(); // returns last div element
+  $("div").eq(1); // returns div element with specific index number
+  $("p").filter(".intro"); // returns all p elemens that match class="intro"
+  $("p").not(".intro"); // returns all p elemens that do not match class="intro"
 });
