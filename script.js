@@ -227,4 +227,15 @@ $(document).ready(function() {
       .width(500)
       .height(500);
   });
+
+  // Traversing the DOM
+  // An ancestor is a parent, grandparent, great-grandparent, and so on.
+  // A descendant is a child, grandchild, great-grandchild, and so on.
+  // Siblings share the same parent.
+
+  // Traversing Up the DOM Tree
+  $("span").parent(); // returns direct parent element of each span
+  $("span").parents(); // returns all ancestor elements of selected element up to html
+  $("span").parents("ul"); // returns all ancestors that are ul elements
+  $("span").parentsUntil("div"); // reutrns all ancestor elements between a span and a div
 });
