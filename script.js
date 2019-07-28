@@ -179,4 +179,17 @@ $(document).ready(function() {
   $("p").remove(".test", ".demo"); // remove all <p> elements with class="test" or class="demo"
 
   // Manipulating CSS
+
+  // Adding and removing classes
+  $("button").click(function() {
+    // add class to selected elements
+    $("h1, h2, p").addClass("blue");
+    $("div").addClass("important blue"); // can add multiple classes at once
+
+    // remove class from selected elements
+    $("h1, h2, p").removeClass("blue");
+
+    // toggle class on and off
+    $("h1, h2, p").toggleClass("blue");
+  });
 });
