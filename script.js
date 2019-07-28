@@ -238,4 +238,10 @@ $(document).ready(function() {
   $("span").parents(); // returns all ancestor elements of selected element up to html
   $("span").parents("ul"); // returns all ancestors that are ul elements
   $("span").parentsUntil("div"); // reutrns all ancestor elements between a span and a div
+
+  // Traversing Down the DOM tree
+  $("div").children(); // returns all elements that are direct children of each div
+  $("div").children("p.first"); // returns all p elements with class="first" that are direct children of div
+  $("div").find("span"); // returns all span elements that are descendents of div
+  $("div").find("*"); // returns all descendents of div
 });
