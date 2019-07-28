@@ -92,4 +92,60 @@ $(document).ready(function() {
     .css("color", "red")
     .slideUp(2000)
     .slideDown(2000);
+
+  // DOM Manipulation
+
+  // Get Content
+  $("#btn1").click(function() {
+    alert("Text:" + $("#test").text()); // text content
+    alert("HTML:" + $("#test").html()); // content including html markup
+    alert("Val:" + $("#test").val()); // value of form field
+    alert($("#w3s").attr("href")); // attribute value - eg href value
+  });
+
+  // Set content
+  // To set, simply include value
+
+  $("#btn1").click(function() {
+    $("#test").text("Hello World!"); // text content
+    $("#test").html("<b>Hello World!</b>"); // content including html markup
+    $("#test").val("John Smith"); // value of form field
+  });
+
+  // Setting supports callback functions
+  $("#btn1").click(function() {
+    $("#test1").text(function(i, origText) {
+      return (
+        "Old text: " + origText + "New text: Hello World! (index: " + i + ")"
+      );
+    });
+  });
+
+  $("#btn1").click(function() {
+    $("#test1").html(function(i, origText) {
+      return (
+        "Old html: " +
+        origText +
+        "New text: Hello <b>World!</b> (index: " +
+        i +
+        ")"
+      );
+    });
+  });
+
+  // attr() is used to set/change attribute values
+  // can set multiple values at once
+  $("button").click(function() {
+    $("#w3s").attr({
+      href: "https://www.reubenjohn.com/",
+      title: "The title of the world"
+    });
+  });
+
+  // can use callbacks as well
+  $("button").click(function() {
+    $("#w3s").attr("href", function(i, origValue) {
+      return origValue + "/jquery/";
+    });
+  });
 });
